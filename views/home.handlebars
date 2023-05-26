@@ -1,2 +1,17 @@
-<h1>Welcome to the Home Page</h1>
-<p>The Real Dills Pro Shop.</p>
+{{!< main}}
+<section>
+  <h1>Welcome to our Merch Store</h1>
+  {{!-- Display the list of products --}}
+  <ul>
+    {{#each products}}
+      <li>
+        <h2>{{name}}</h2>
+        <p>Price: ${{price}}</p>
+        <p>{{description}}</p>
+      </li>
+    {{/each}}
+  </ul>
+
+  {{!-- Add the login button --}}
+  <a href="/login">Login</a>
+</section>
