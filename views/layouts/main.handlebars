@@ -4,7 +4,10 @@
 
 <head>
   <title>Merch Store</title>
-  <link rel="stylesheet" href="/styles.css"> <!-- Add the CSS file link here -->
+  <link rel="stylesheet" href="/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <!-- Add the CSS file link here -->
   <!-- Add your other head elements here -->
 </head>
 
@@ -19,6 +22,89 @@
 
   <main>
     {{{body}}}
+    <style>
+      .card {
+        margin-bottom: 20px;
+      }
+
+      .shirt-card {
+        border-color: #93934A;
+      }
+
+      .shorts-card {
+        border-color: #93934A;
+      }
+
+      .socks-card {
+        border-color: #93934A;
+      }
+
+      .paddles-card {
+        border-color: #93934A;
+      }
+
+      .btn-primary {
+        background-color: #93934A;
+        border-color: #4A4A25;
+      }
+
+      .btn-primary:hover {
+        background-color: #4A4A25;
+        border-color: #93934A;
+      }
+
+      h5 {
+        color: #4A4A25 !important;
+      }
+    </style>
+    </head>
+
+    <body>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3">
+            <div class="card shirt-card">
+              <img src="shirt-image.jpg" class="card-img-top" alt="Shirt Image">
+              <div class="card-body">
+                <h5 class="card-title">Shirts</h5>
+                <p class="card-text">Browse our collection of the Real Dills shirts.</p>
+                <a href="#" class="btn btn-primary">Shop Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card shorts-card">
+              <img src="shorts-image.jpg" class="card-img-top" alt="Shorts Image">
+              <div class="card-body">
+                <h5 class="card-title">Shorts</h5>
+                <p class="card-text">Discover the Real Dills comfortable shorts.</p>
+                <a href="#" class="btn btn-primary">Shop Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card socks-card">
+              <img src="socks-image.jpg" class="card-img-top" alt="Socks Image">
+              <div class="card-body">
+                <h5 class="card-title">Socks</h5>
+                <p class="card-text">Explore our collection of high-performance Real Dills socks.</p>
+                <a href="#" class="btn btn-primary">Shop Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card paddles-card">
+              <img src="paddles-image.jpg" class="card-img-top" alt="Paddles Image">
+              <div class="card-body">
+                <h5 class="card-title">Paddles</h5>
+                <p class="card-text">Choose from our wide range of professional Real Dills paddles.</p>
+                <a href="#" class="btn btn-primary">Shop Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
   </main>
 
   <footer>
