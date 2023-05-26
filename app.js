@@ -3,9 +3,21 @@ const exphbs = require('express-handlebars');
 const { auth, requiresAuth } = require('express-openid-connect');
 const app = express();
 
+// ...
+
 // Set up Handlebars as the template engine
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
+
+// Set up static file serving
+app.use(express.static('public'));
+
+
+// Render the home view using Handlebars
+app.get('/', (req, res) => {
+  res.render('home'); // Assuming you have a 'home.handlebars' template
+});
+
 
 // Set up static file serving
 app.use(express.static('public'));
