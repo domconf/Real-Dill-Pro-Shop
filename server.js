@@ -6,9 +6,12 @@ const path = require('path');
 const router = require('./routes/index');
 const { auth } = require('express-openid-connect');
 const exphbs = require('express-handlebars');
+const app = express();
+
+const routes = require('./routes');
+const sequelize = require('./config/connection');
 
 // Create an instance of the Handlebars engine
-const app = express();
 app.engine('hbs', exphbs({
   defaultLayout: 'main',
   extname: '.hbs', // Specify the file extension for handlebars templates
@@ -67,4 +70,15 @@ app.use(function (err, req, res, next) {
 
 http.createServer(app).listen(port, () => {
   console.log(`Listening on ${config.baseURL}`);
+});
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use(routes);
+
+const inst = process.env.inst || 3001;
+
+sequelize.sync({ force: false }).then(() => {
+  app.listen(inst, () => console.log('Now listening'));
 });
