@@ -2,10 +2,10 @@
   "name": "real-dill-pro-shop",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,10 @@
     "express-openid-connect": "^2.16.0",
     "express-session": "^1.17.1",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.3.5",
+    "debug": "~3.2.7",
+    "ejs": "^3.1.8",
+    "http-errors": "~1.8.1",
+    "morgan": "~1.10.0"
   }
 }
