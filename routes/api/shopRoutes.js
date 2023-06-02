@@ -1,43 +1,60 @@
 const router = require('express').Router();
-const Book = require('../../models/Book');
+const Shop = require('../../models/Shop');
 
-// GET all books
+// GET all items
 router.get('/', (req, res) => {
-  // Get all books from the book table
-  Book.findAll().then((bookData) => {
-    res.json(bookData);
+  // Get all items from the shop table
+  Shop.findAll().then((shopData) => {
+    res.json(shopData);
   });
 });
 
-// GET all paperback books
-router.get('/paperbacks', (req, res) => {
-  Book.findAll({
-    // Order by title in ascending order
-    order: ['title'],
+// GET all apparel items
+router.get('/apparel', (req, res) => {
+  Shop.findAll({
+    // Order by name in ascending order
+    order: ['id'],
     where: {
-      // Only get books that have this boolean set to TRUE
-      is_paperback: true
+      // Only get items that have this boolean set to TRUE
+      is_apparel: true
     },
     attributes: {
       // Don't include these fields in the returned data
-      exclude: ['is_paperback', 'edition']
+      exclude: []
     }
-  }).then((bookData) => {
-    res.json(bookData);
+  }).then((shopData) => {
+    res.json(shopData);
   });
 });
 
-// GET a single book
+router.get('/edition1', (req, res) => {
+  Shop.findAll({
+    // Order by name in ascending order
+    order: ['id'],
+    where: {
+      // Only get items that have this boolean set to TRUE
+      edition: 1
+    },
+    attributes: {
+      // Don't include these fields in the returned data
+      exclude: []
+    }
+  }).then((shopData) => {
+    res.json(shopData);
+  });
+});
+
+// GET a single item
 router.get('/:id', (req, res) => {
   // Find a single book by its primary key (book_id)
-  Book.findByPk(req.params.id).then((bookData) => {
-    res.json(bookData);
+  Shop.findByPk(req.params.id).then((shopData) => {
+    res.json(shopData);
   });
 });
 
-// CREATE a book
+// CREATE a shop item
 router.post('/', (req, res) => {
-  Book.create(req.body)
+  Shop.create(req.body)
     .then((newBook) => {
       res.json(newBook);
     })
@@ -46,57 +63,73 @@ router.post('/', (req, res) => {
     });
 });
 
-// CREATE multiple books
+// CREATE multiple shop items
 router.post('/seed', (req, res) => {
-  Book.bulkCreate([
+  Shop.bulkCreate([
     {
-      title: 'First Place Trophy',
+      name: 'First Place Trophy',
       price: '$14.99',
-      isbn: '978',
-      pages: 336,
+      serialno: '1426',
       edition: 1,
-      is_paperback: false
+      is_apparel: false
     },
     {
-      title: 'Third Edition Almanac',
+      name: '1990-2023 Dill Ball Almanac',
       price: '$9.99',
-      isbn: '978',
-      pages: 500,
+      serialno: '5696',
       edition: 1,
-      is_paperback: true
+      is_apparel: false
     },
     {
-      title: "Dill Ball",
+      name: "PickleBall",
       price: '$4.99',
-      isbn: '978',
-      pages: 192,
+      serialno: '1584',
       edition: 2,
-      is_paperback: true
+      is_apparel: false
     },
     {
-      title: 'Signed Dill Ball Jersey',
+      name: 'Signed PickleBall Jersey',
       price: '$99.99',
-      isbn: '978',
-      pages: 352,
+      serialno: '7360',
       edition: 2,
-      is_paperback: false
+      is_apparel: true
     },
     {
-      title: 'At-Home Dill Ball Court',
+      name: 'At-Home PickleBall Court',
       price: '$149.99',
-      isbn: '978',
-      pages: 672,
+      serialno: '8592',
       edition: 3,
-      is_paperback: false
+      is_apparel: false
     },
     {
-      title: 'Dill Ball 2023 Stainless-Steel Plaque',
+      name: 'PickleBall 2023 Stainless-Steel Plaque',
       price: '$59.99',
-      isbn: '979',
-      pages: 256,
+      serialno: '1939',
       edition: 1,
-      is_paperback: true
+      is_apparel: false
+    },
+    {
+      name: 'PickleBall Summer Shorts',
+      price: '$29.99',
+      serialno: '3352',
+      edition: 1,
+      is_apparel: true
+    },
+    {
+      name: 'PickleBall Summer Shirt',
+      price: '$29.99',
+      serialno: '7545',
+      edition: 1,
+      is_apparel: true
+    },
+    {
+      name: 'PickleBall Indoor/Outdoor Socks',
+      price: '$89.99',
+      serialno: '4423',
+      edition: 1,
+      is_apparel: true
     }
+
   ])
     .then(() => {
       res.send('Database seeded!');
