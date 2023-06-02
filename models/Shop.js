@@ -10,22 +10,19 @@ Shop.init(
       primaryKey: true,
       autoIncrement: true
     },
-    title: {
+    name: {
       type: DataTypes.STRING
     },
     price: {
       type: DataTypes.STRING
     },
-    isbn: {
+    serialno: {
       type: DataTypes.STRING
-    },
-    pages: {
-      type: DataTypes.INTEGER
     },
     edition: {
       type: DataTypes.INTEGER
     },
-    is_paperback: {
+    is_apparel: {
       type: DataTypes.BOOLEAN
     }
   },
