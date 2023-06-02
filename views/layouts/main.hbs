@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" class="bg-gray-200">
+
 <head>
-  <meta charset="UTF-8">
-  <title>{{ title "Real Dill Pro Shop" }}</title>
-  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
-  <link rel="shortcut icon" href="//cdn2.auth0.com/styleguide/latest/lib/logos/img/favicon.png">
+    <meta charset="UTF-8">
+    <title>{{ title "Real Dill Pro Shop" }}</title>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+    <link rel="shortcut icon" href="//cdn2.auth0.com/styleguide/latest/lib/logos/img/favicon.png">
 </head>
+
 <body>
-    <nav class="flex items-center justify-between flex-wrap bg-gray-800 p-6">
+    <nav class="flex items-center justify-between flex-wrap bg-green-500 p-6">
 
         <div class="flex items-center flex-shrink-0 text-white mr-6">
-            <svg class="fill-current h-8 w-8 mr-2" width="49" height="54" viewBox="0 0 152 168" xmlns="http://www.w3.org/2000/svg"><path d="M119.127,135.861 L102.277,83.997 L146.384,51.952 L91.863,51.952 L75.011,0.09 L75.006,0.076 L129.536,0.076 L146.391,51.947 L146.391,51.946 L146.405,51.938 C156.195,82.03 146.113,116.256 119.127,135.861 L119.127,135.861 Z M30.893,135.861 L30.879,135.871 L74.998,167.924 L119.127,135.862 L75.012,103.808 L30.893,135.861 L30.893,135.861 Z M3.624,51.939 L3.624,51.939 C-6.68,83.66 5.281,117.272 30.884,135.867 L30.888,135.851 L47.74,83.99 L3.642,51.951 L58.15,51.951 L75.003,0.089 L75.007,0.075 L20.474,0.075 L3.624,51.939 L3.624,51.939 Z"></svg>
-            <span class="font-semibold text-xl tracking-tight">Real Dill Pro Shop</span>
+            <svg class="fill-current h-8 w-8 mr-2" width="49" height="54" viewBox="0 0 152 168"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M119.127,135.861 L102.277,83.997 L146.384,51.952 L91.863,51.952 L75.011,0.09 L75.006,0.076 L129.536,0.076 L146.391,51.947 L146.391,51.946 L146.405,51.938 C156.195,82.03 146.113,116.256 119.127,135.861 L119.127,135.861 Z M30.893,135.861 L30.879,135.871 L74.998,167.924 L119.127,135.862 L75.012,103.808 L30.893,135.861 L30.893,135.861 Z M3.624,51.939 L3.624,51.939 C-6.68,83.66 5.281,117.272 30.884,135.867 L30.888,135.851 L47.74,83.99 L3.642,51.951 L58.15,51.951 L75.003,0.089 L75.007,0.075 L20.474,0.075 L3.624,51.939 L3.624,51.939 Z">
+            </svg>
+            <span class="font-semibold text-xl tracking-tight">Real Dills Pro Shop</span>
         </div>
 
         <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
             <div class="text-sm lg:flex-grow">
                 <a href="/" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Home</a>
                 {{#if user}}
-                    <a href="/profile" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Profile</a>
-                    <a href="/logout" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Logout</a>
+                <a href="/logout"
+                    class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Logout</a>
                 {{else}}
-                    <a href="/login" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Login</a>
+                <a href="/login"
+                    class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Login</a>
                 {{/if}}
             </div>
 
             <div>
-                <a href="https://github.com/domconf/Real-Dill-Pro-Shop" target="_blank" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white mt-4 lg:mt-0">
+                <a href="https://github.com/domconf/Real-Dill-Pro-Shop" target="_blank"
+                    class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white mt-4 lg:mt-0">
                     <span class="font-semibold text-xl tracking-tight">GitHub</span>
                 </a>
             </div>
@@ -37,10 +45,82 @@
 
 
 
-<h1 class="text-4xl">Hello World</h1>
+            <h1 class="text-4xl">Welcome to the Real Dills Pro Shop!</h1>
 
-{{#if user}}
-    <p>You are logged in. <a href="/profile" class="underline">View your profile</a>.</p>
-{{else}}
-    <p>You are not logged in. <a href="/login" class="underline">Login</a>.</p>
-{{/if}}
+            {{#if user}}
+            <p>You are logged in.</p>
+            {{else}}
+            <p>You are not logged in. <a href="/login" class="underline">Login</a>.</p>
+            {{/if}}
+
+            <body>
+                {{#if user}}
+                <div class="container mx-auto">
+                    <div class="flex flex-wrap -mx-2">
+                        <div class="w-full md:w-1/2 lg:w-1/4 px-2">
+                            <div class="card shirt-card border-4 border-green-500 rounded-lg">
+                                <img src="images/shirt-image.jpg" class="card-img-top" alt="Shirt Image">
+                                <div class="card-body flex flex-col justify-between">
+                                    <div>
+                                        <h5 class="card-title text-green-500">Shirts</h5>
+                                        <p class="card-text">Purchase our one of a kind Real Dills shirt.</p>
+                                    </div>
+                                    <div class="flex justify-center">
+                                        <a href="#"
+                                            class="btn btn-primary bg-green-500 border-green-900 hover:bg-green-800 hover:border-green-800 square-btn">Purchase</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 lg:w-1/4 px-2">
+                            <div class="card shorts-card border-4 border-green-500 rounded-lg">
+                                <img src="images/shorts-image.jpg" class="card-img-top" alt="Shorts Image">
+                                <div class="card-body flex flex-col justify-between">
+                                    <div>
+                                        <h5 class="card-title text-green-500">Shorts</h5>
+                                        <p class="card-text">Discover the Real Dills comfortable shorts.</p>
+                                    </div>
+                                    <div class="flex justify-center">
+                                        <a href="#"
+                                            class="btn btn-primary bg-green-500 border-green-900 hover:bg-green-800 hover:border-green-800 square-btn">Purchase</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 lg:w-1/4 px-2">
+                            <div class="card socks-card border-4 border-green-500 rounded-lg">
+                                <img src="images/socks-image.jpg" class="card-img-top" alt="Socks Image">
+                                <div class="card-body flex flex-col justify-between">
+                                    <div>
+                                        <h5 class="card-title text-green-500">Socks</h5>
+                                        <p class="card-text">Slide on a pair of our high-performance Real Dills socks.
+                                        </p>
+                                    </div>
+                                    <div class="flex justify-center">
+                                        <a href="#"
+                                            class="btn btn-primary bg-green-500 border-green-900 hover:bg-green-800 hover:border-green-800 square-btn">Purchase</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 lg:w-1/4 px-2">
+                            <div class="card paddles-card border-4 border-green-500 rounded-lg">
+                                <img src="images/paddles-image.jpg" class="card-img-top" alt="Paddles Image">
+                                <div class="card-body flex flex-col justify-between">
+                                    <div>
+                                        <h5 class="card-title text-green-500">Paddles</h5>
+                                        <p class="card-text">Purchase a Real Dills professional paddle.</p>
+                                    </div>
+                                    <div class="flex justify-center">
+                                        <a href="#"
+                                            class="btn btn-primary bg-green-500 border-green-900 hover:bg-green-800 hover:border-green-800 square-btn">Purchase</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{else}}
+                <p>Please log in to view merchandise categories.</p>
+                {{/if}}
+            </body>
