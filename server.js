@@ -77,6 +77,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
 
+app.use(express.static('public'));
+
 const inst = process.env.inst || 3001;
 
 sequelize.sync({ force: false }).then(() => {

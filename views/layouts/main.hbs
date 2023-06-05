@@ -6,6 +6,7 @@
     <title>Real Dills Merch</title>
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
     <link rel="shortcut icon" href="//cdn2.auth0.com/styleguide/latest/lib/logos/img/favicon.png">
+
 </head>
 
 <body>
@@ -41,86 +42,91 @@
         </div>
     </nav>
     <div class="flex justify-center py-4">
-        <div class="w-5/6 lg:w-3/4 bg-white p-4 rounded overflow-hidden shadow-lg">
+        <div class="w-5/6 lg:w-3/4">
+            <div class="bg-white p-4 rounded overflow-hidden shadow-lg">
+                <h1 class="text-4xl text-center font-bold"
+                    style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; text-shadow: 2px 2px 2px #34D399; color: black;">
+                    Welcome to the Real Dills Pro Shop!
+                </h1>
 
-
-
-            <h1 class="text-4xl">Welcome to the Real Dills Pro Shop!</h1>
-
-            {{#if user}}
-            <p>You are logged in.</p>
-            {{else}}
-            <p>You are not logged in. <a href="/login" class="underline">Login</a>.</p>
-            {{/if}}
-
-            <body>
                 {{#if user}}
-                <div class="container mx-auto">
-                    <div class="flex flex-wrap -mx-2">
-                        <div class="w-full md:w-1/2 lg:w-1/4 px-2">
-                            <div class="card shirt-card border-4 border-green-500 rounded-lg">
-                                <img src="../images/shirt-image.jpg" class="card-img-top" alt="Shirt Image">
-                                <div class="card-body flex flex-col justify-between">
-                                    <div>
-                                        <h5 class="card-title text-green-500">Shirts</h5>
-                                        <p class="card-text">Purchase our one of a kind Real Dills shirt.</p>
-                                    </div>
-                                    <div class="flex justify-center">
-                                        <a href="#"
-                                            class="btn btn-primary bg-black text-green-500 border-green-500 border-2 hover:bg-green-500 hover:border-green-500 square-btn rounded">$29.95</a>
-                                    </div>
-                                </div>
+                <p class="mt-4 text-center">You are logged in.</p>
+                {{else}}
+                <p class="mt-4 text-center">You are not logged in. <a href="/login" class="underline">Login</a>.</p>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+    <body>
+        {{#if user}}
+        <div class="container mx-auto">
+            <div class="flex flex-wrap -mx-2">
+                <div class="w-full md:w-1/2 lg:w-1/4 px-2">
+                    <div class="card shirt-card border-4 border-green-500 rounded-lg">
+                        <img src="../../public/images/shirt-image.jpg" class="card-img-top" alt="Shirt Image">
+                        <div class="card-body flex flex-col justify-between">
+                            <div>
+                                <h5 class="card-title text-green-500">Shirts</h5>
+                                <p class="card-text">Purchase our one of a kind Real Dills shirt.</p>
                             </div>
-                        </div>
-                        <div class="w-full md:w-1/2 lg:w-1/4 px-2">
-                            <div class="card shorts-card border-4 border-green-500 rounded-lg">
-                                <img src="../images/shorts-image.jpg" class="card-img-top" alt="Shorts Image">
-                                <div class="card-body flex flex-col justify-between">
-                                    <div>
-                                        <h5 class="card-title text-green-500">Shorts</h5>
-                                        <p class="card-text">Discover the Real Dills comfortable shorts.</p>
-                                    </div>
-                                    <div class="flex justify-center">
-                                        <a href="#"
-                                            class="btn btn-primary bg-black text-green-500 border-green-500 border-2 hover:bg-green-500 hover:border-green-500 square-btn rounded">$24.95</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-1/2 lg:w-1/4 px-2">
-                            <div class="card socks-card border-4 border-green-500 rounded-lg">
-                                <img src="../images/socks-image.jpg" class="card-img-top" alt="Socks Image">
-                                <div class="card-body flex flex-col justify-between">
-                                    <div>
-                                        <h5 class="card-title text-green-500">Socks</h5>
-                                        <p class="card-text">Slide on a pair of our high-performance Real Dills socks.
-                                        </p>
-                                    </div>
-                                    <div class="flex justify-center">
-                                        <a href="#"
-                                            class="btn btn-primary bg-black text-green-500 border-green-500 border-2 hover:bg-green-500 hover:border-green-500 square-btn rounded">$14.95</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full md:w-1/2 lg:w-1/4 px-2">
-                            <div class="card paddles-card border-4 border-green-500 rounded-lg">
-                                <img src="../images/paddles-image.jpg" class="card-img-top" alt="Paddles Image">
-                                <div class="card-body flex flex-col justify-between">
-                                    <div>
-                                        <h5 class="card-title text-green-500">Paddles</h5>
-                                        <p class="card-text">Purchase a Real Dills professional paddle.</p>
-                                    </div>
-                                    <div class="flex justify-center">
-                                        <a href="#"
-                                            class="btn btn-primary bg-black text-green-500 border-green-500 border-2 hover:bg-green-500 hover:border-green-500 square-btn rounded">$49.95</a>
-                                    </div>
-                                </div>
+                            <div class="flex justify-center">
+                                <a href="#"
+                                    class="btn btn-primary bg-black text-green-500 border-green-500 border-2 hover:bg-green-500 hover:border-green-500 hover:text-black square-btn rounded">$29.95</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                {{else}}
-                <p>Please log in to view merchandise categories.</p>
-                {{/if}}
-            </body>
+                <div class="w-full md:w-1/2 lg:w-1/4 px-2">
+                    <div class="card shorts-card border-4 border-green-500 rounded-lg">
+                        <img src="../../public/images/shorts-image.jpg" class="card-img-top" alt="Shorts Image">
+                        <div class="card-body flex flex-col justify-between">
+                            <div>
+                                <h5 class="card-title text-green-500">Shorts</h5>
+                                <p class="card-text">Discover the Real Dills comfortable shorts.</p>
+                            </div>
+                            <div class="flex justify-center">
+                                <a href="#"
+                                    class="btn btn-primary bg-black text-green-500 border-green-500 border-2 hover:bg-green-500 hover:border-green-500 hover:text-black square-btn rounded">$24.95</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/4 px-2">
+                    <div class="card socks-card border-4 border-green-500 rounded-lg">
+                        <img src="../../public/images/socks-image.jpg" class="card-img-top" alt="Socks Image">
+                        <div class="card-body flex flex-col justify-between">
+                            <div>
+                                <h5 class="card-title text-green-500">Socks</h5>
+                                <p class="card-text">Slide on a pair of our high-performance Real Dills socks.
+                                </p>
+                            </div>
+                            <div class="flex justify-center">
+                                <a href="#"
+                                    class="btn btn-primary bg-black text-green-500 border-green-500 border-2 hover:bg-green-500 hover:border-green-500 hover:text-black square-btn rounded">$14.95</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/4 px-2">
+                    <div class="card paddles-card border-4 border-green-500 rounded-lg">
+                        <img src="../../public/images/paddles-image.jpg" class="card-img-top" alt="Paddles Image">
+                        <div class="card-body flex flex-col justify-between">
+                            <div>
+                                <h5 class="card-title text-green-500">Paddles</h5>
+                                <p class="card-text">Purchase a Real Dills professional paddle.</p>
+                            </div>
+                            <div class="flex justify-center">
+                                <a href="#"
+                                    class="btn btn-primary bg-black text-green-500 border-green-500 border-2 hover:bg-green-500 hover:border-green-500 hover:text-black square-btn rounded">$49.95</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <p class="mt-4 text-center font-bold">Please log in to view merchandise categories.</p>
+
+        {{/if}}
+    </body>
