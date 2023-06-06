@@ -19,6 +19,7 @@ Real Dill Pro Shop is an application that resembles an online sporting goods sto
 * Sequelize
 * Express
 * Auth0
+
 # Contributors
 
 * Anthony Pica https://github.com/antpica
@@ -27,9 +28,3 @@ Real Dill Pro Shop is an application that resembles an online sporting goods sto
 * Dominica Purcell https://github.com/Dominica-E-Purcell
 * Anthony DeMatteo https://github.com/AntDeMatteo1
 
-
-
-
-
-9:02
-just need the screenshots added
