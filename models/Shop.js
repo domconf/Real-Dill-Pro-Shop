@@ -16,8 +16,8 @@ Shop.init(
     price: {
       type: DataTypes.STRING
     },
-    serialno: {
-      type: DataTypes.STRING
+    stock: {
+      type: DataTypes.INTEGER
     },
     edition: {
       type: DataTypes.INTEGER
