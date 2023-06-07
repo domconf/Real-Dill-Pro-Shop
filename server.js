@@ -35,6 +35,7 @@ app.use(express.json());
 const config = {
   authRequired: false,
   auth0Logout: true,
+  baseURL: `https://real-dills-pro-shop.herokuapp.com/`,
 };
 
 const port = process.env.PORT || 3000;
