@@ -3,6 +3,12 @@ Real Dill Pro Shop is an application that resembles an online sporting goods sto
 
 # Screenshots
 
+![Welcome](/public/images/welcome.png "Welcome")
+
+![Store](/public/images/store.png "Store")
+
+![Insomnia](/public/images/insomnia.jpg "Insomnia")
+
 # Installation
 
 1. Run npm i to install dependencies
@@ -20,6 +26,10 @@ Real Dill Pro Shop is an application that resembles an online sporting goods sto
 * Sequelize
 * Express
 * Auth0
+
+# Back End Testing Walkthrough
+
+
 
 # Contributors
 
