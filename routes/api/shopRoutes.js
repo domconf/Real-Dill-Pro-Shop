@@ -1,13 +1,11 @@
 const router = require('express').Router();
 const Shop = require('../../models/Shop');
 
-// GET all items
-router.get('/', (req, res) => {
   // Get all items from the shop table
   Shop.findAll().then((shopData) => {
     res.json(shopData);
   });
-});
+
 
 // GET all apparel items
 router.get('/apparel', (req, res) => {

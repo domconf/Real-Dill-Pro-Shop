@@ -1,86 +1,77 @@
 const dotenv = require('dotenv');
 const express = require('express');
 const http = require('http');
-const logger = require('morgan');
 const path = require('path');
-const router = require('./routes/index');
-const { auth } = require('express-openid-connect');
 const exphbs = require('express-handlebars');
-const app = express();
+const session = require('express-session');
 
 const routes = require('./routes');
 const sequelize = require('./config/connection');
-
-// Create an instance of the Handlebars engine
-app.engine('hbs', exphbs({
-  defaultLayout: 'main',
-  extname: '.hbs', // Specify the file extension for handlebars templates
-  helpers: {
-    title: function () {
-      // Implement the logic to retrieve the title dynamically
-      // For example, you can access it from the locals object
-      return this.title || 'Default Title';
-    }
-  }
-}));
-app.set('view engine', 'hbs');
-
+const helpers = require('./utils/helpers');
+const app = express();
+const hbs = exphbs.create({ helpers });
 dotenv.config();
 
-app.set('views', path.join(__dirname, 'views'));
-app.use(logger('dev'));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.json());
 
-const config = {
-  authRequired: false,
-  auth0Logout: true,
-};
-
-const port = process.env.PORT || 3000;
-if (!config.baseURL && !process.env.BASE_URL && process.env.PORT && process.env.NODE_ENV !== 'production') {
-  config.baseURL = `http://localhost:${port}`;
-}
-
-app.use(auth(config));
-
-// Middleware to make the `user` object available for all views
-app.use(function (req, res, next) {
-  res.locals.user = req.oidc.user;
-  next();
-});
-
-app.use('/', router);
-
-// Catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  const err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
-// Error handler
-app.use(function (err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: process.env.NODE_ENV !== 'production' ? err : {},
-  });
-});
-
-http.createServer(app).listen(port, () => {
-  console.log(`Listening on ${config.baseURL}`);
-});
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
+// Configure the Handlebars view engine
 
-app.use(express.static('public'));
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'views'));
 
-const inst = process.env.inst || 3001;
+// Set up session middleware
+app.use(session({
+  secret: 'your-secret-key',
+  resave: false,
+  saveUninitialized: true
+}));
+
+// Serve static files from the "public" directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Parse JSON request bodies
+app.use(express.json());
+
+// Define routes
+app.use('/', routes);
+
+// Homepage route
+app.get('/', (req, res) => {
+  // Handle the logic for the home page
+  res.render('main');
+});
+
+// Login route
+app.get('/login', (req, res) => {
+  // Render the login page
+  res.render('login');
+});
+
+app.post('/login', (req, res) => {
+  // Perform authentication logic here
+  // Check credentials, validate user, etc.
+
+  // If authentication is successful
+  req.session.user = { username: 'exampleuser' }; // Store user information in the session
+  res.redirect('/'); // Redirect to the homepage or any other desired page
+});
+
+// Logout route
+app.get('/logout', (req, res) => {
+  // Destroy the session and clear the user data
+  req.session.destroy();
+  res.redirect('/'); // Redirect to the homepage or any other desired page
+});
+
+const port = process.env.PORT || 3001;
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(inst, () => console.log('Now listening'));
+  app.listen(port, () => console.log('Now listening on port', port));
 });
