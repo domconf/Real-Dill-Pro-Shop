@@ -7,15 +7,12 @@ Real Dill Pro Shop is an application that resembles an online sporting goods sto
 
 ![Store](/public/images/store.png "Store")
 
-![Insomnia](/public/images/insomnia.jpg "Insomnia")
-
 # Installation
 
 1. Run npm i to install dependencies
 2. Log into MySQL and input code from schema.sql file
-3. Run npm start
-4. Test the backend database in Insomnia Core via GET and POST requests.
-5. Open in Heroku
+3. Run "npm run seed" and "npm start"
+4. Open on localhost or on Heroku
 
 # Technologies Used
 * Javascript
@@ -25,11 +22,6 @@ Real Dill Pro Shop is an application that resembles an online sporting goods sto
 * MySQL
 * Sequelize
 * Express
-* Auth0
-
-# Back End Testing Walkthrough
-
-
 
 # Contributors
 
@@ -38,4 +30,4 @@ Real Dill Pro Shop is an application that resembles an online sporting goods sto
 * Dominick Confessore https://github.com/domconf
 * Dominica Purcell https://github.com/Dominica-E-Purcell
 * Anthony DeMatteo https://github.com/AntDeMatteo1
-
+* RU Bootcamp Modules: 09-14
