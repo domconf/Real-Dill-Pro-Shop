@@ -1,0 +1,30 @@
+<div class="info">
+    {{#if message}}
+    <p>{{message}}</p>
+    {{/if}}
+</div>
+
+<div class="items_container">
+    {{#each items}}
+    <div class="item_card">
+        <img src="{{this.imageurl}}" alt="">
+        <p><span>{{this.name}} </span> <span>${{this.price}}</span></p>
+        <button onclick="addToOrder(this,'{{this.name}}','{{this.price}}','{{this.imageurl}}','{{this.id}}')">Add to
+            Order</button>
+    </div>
+    {{/each}}
+</div>
+<div class="cart_items">
+    <div class="cart_items_container">
+        <div class="cart_item">
+        </div>
+    </div>
+    <div>
+        <div class="cart_item">
+            <h3>Total</h3>
+            <h3 id="total_price"></h3>
+        </div>
+        <button class="confirm">Confirm Order</button>
+    </div>
+</div>
+<script src="/js/order.js"></script>

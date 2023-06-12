@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Real Dills Pro Shop</title>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="brand">Real Dills Pro Shop</a>
+        <div>
+            <a href="/store">Store</a>
+            {{#if isLogedIn}}
+
+            <a href="/" id="logout">Logout</a>
+            {{else}}
+            <a href="/login" id="login">Login</a>
+            {{/if}}
+            <button id="cart">Cart</button>
+        </div>
+    </nav>
+
+    <div class="flex justify-center py-4">
+        <div class="w-5/6 lg:w-3/4">
+            <div class="bg-white p-4 rounded overflow-hidden shadow-lg">
+                <h1 class="text-4xl text-center font-bold"
+                    style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; text-shadow: 2px 2px 2px #34D399; color: black;">
+                    Welcome to the Real Dills Pro Shop!
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        {{{body}}}
+    </main>
+
+    {{#if isLogedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+</body>
+
+</html>

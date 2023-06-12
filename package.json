@@ -1,32 +1,29 @@
 {
-  "name": "real-dill-pro-shop",
+  "name": "pickleball",
   "version": "1.0.0",
-  "description": "",
+  "description": "project 2",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node seeds/index.js"
   },
-  "keywords": [],
-  "price": "",
+  "author": "Ian Dominick Anthony Pica",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.0.0",
-    "body-parser": "^1.20.2",
-    "bootstrap": "^5.3.0-alpha3",
-    "connect-session-sequelize": "^7.0.4",
-    "debug": "~3.2.7",
-    "dotenv": "^8.6.0",
-    "ejs": "^3.1.8",
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.7",
+    "dotenv": "^16.1.4",
     "express": "^4.18.2",
-    "express-handlebars": "^5.3.5",
-    "express-openid-connect": "^2.16.0",
+    "express-handlebars": "^7.0.7",
     "express-session": "^1.17.3",
-    "hbs": "^4.2.0",
-    "http-errors": "~1.8.1",
-    "morgan": "~1.10.0",
-    "mysql2": "^2.2.5",
-    "secret": "^1.2.0",
-    "sequelize": "^6.3.5"
+    "mysql2": "^3.3.2",
+    "sequelize": "^6.32.0",
+    "shrinkwrap": "^0.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
