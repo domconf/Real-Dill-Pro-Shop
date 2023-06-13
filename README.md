@@ -20,10 +20,10 @@ Real Dill Pro Shop is an application that resembles an online sporting goods sto
 * MySQL
 * Sequelize
 * Express
+* Tailwind
 
 # Deployed Link
 https://real-dills-pro-shop.herokuapp.com/
-
 
 # Contributors
 * Anthony Pica https://github.com/antpica
