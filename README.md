@@ -22,7 +22,7 @@ Real Dill Pro Shop is an application that resembles an online sporting goods sto
 * Express
 
 # Deployed Link
-https://realdill.herokuapp.com/
+https://real-dills-pro-shop.herokuapp.com/
 
 
 # Contributors
